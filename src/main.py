@@ -43,8 +43,15 @@ if __name__ == "__main__":
             news_entry_selector = conf.get("news_selector_prefix") + str(news_entry) + conf.get("news_selector_postfix")
             print("News nummer: ", str(page), "->", str(news_entry), ") news_entry_selector", news_entry_selector)
             selektor = driver.find_element(By.XPATH, news_entry_selector)
-            print("tag_name gefunden: ",selektor.tag_name)
-            print("Text gefunden: ", selektor.text)
+            # Todo: Alternative finden -> das führt zur Exception:
+            selektor.click()
+            # todo: Idee: "Titel:" suchen, dann 3 runter (parent) und x-te Tabellenzeile die 4. Column und darin den a-Tag
+            time.sleep(conf.get("wait_after_click_fast"))
+            close_news = driver.find_element(By.XPATH, conf.get("close_news_selector"))
+            close_news.click()
+            time.sleep(conf.get("wait_after_click_fast"))
+            #print("tag_name gefunden: ",selektor.tag_name)
+            #print("Text gefunden: ", selektor.text)
         time.sleep(conf.get("wait_after_click"))
     #open_news = driver.find_element(By.XPATH, conf.get("select_first_news_selector"))
     #open_news.click()

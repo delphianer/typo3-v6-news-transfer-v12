@@ -24,6 +24,7 @@ def load_config():
             "pwd_user_field" : '//*[@id="t3-username"]',
             "pwd_password_field" : '//*[@id="t3-password"]',
             "wait_after_click" : 5,
+            "wait_after_click_fast" : 2,
             "click_events_to_go_to_news" : {
                 "nachrichten_ansicht" : 'Nachrichten'#'//*[@id="web_txttnewsM1"]/a/span[2]'
                 #,"news_storage" : '//*[@id="ext-gen137"]'
@@ -31,11 +32,11 @@ def load_config():
             }
             , "select_first_news_selectorx": '/html/body/div[1]/div[2]/div/div[2]/div/table/tbody/tr[2]/td[4]/a'
             , "select_first_news_selectory": '/html/body/div[1]/div[2]/div/div[2]/div/table/tbody/tr[3]/td[4]/a'
-            , "news_selector_prefix":        '//*[@id="ttnewslist"]/table/tbody/tr['
+            , "news_selector_prefix":        '/html/body/div[1]/div[2]/div/div[2]/div/table/tbody/tr['
             , "news_selector_start_number" : 2
             , "news_selector_end_number" : 16
             , "news_selector_last_page_end_number" : 9
-            , "news_selector_postfix": ']/td[4]'
+            , "news_selector_postfix": ']/td[4]/a'
             , "close_news_selector" : '//*[@id="typo3-docheader"]/div[2]/div[1]/div[1]/a/span'
             , "fields_for_download" : {
                 "titel" : '//*[@name="data[tt_news][128][title]_hr"]'
